@@ -17,8 +17,6 @@ function Results(props) {
 
     useEffect(() => {
         fetch(`http://localhost:4000/feeds?url=${url}`)
-            //DEV ONLY CORS ANYWHERE FETCH
-            //fetch(`https://cors-anywhere.herokuapp.com/${url}`)
             .then(response => response.text())
             .then(data => setPodcast(Parse(data)))
     }, []);

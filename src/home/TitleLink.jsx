@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 function TitleLink({ url, title, image }) {
 
-
     //function selectPodcast
     return (
         <Link
