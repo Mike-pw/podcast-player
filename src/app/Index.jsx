@@ -6,11 +6,10 @@ import { accountService } from '@/_services';
 import { Nav, PrivateRoute, Alert } from '@/_components';
 import { Home } from '@/home';
 import { Results } from '@/results';
+import { Player } from '@/player';
 import { Profile } from '@/profile';
 import { Admin } from '@/admin';
 import { Account } from '@/account';
-
-import { Parser } from 'podcast-rss-feed-parser'
 
 function App() {
     const { pathname } = useLocation();
@@ -18,7 +17,6 @@ function App() {
 
     useEffect(() => {
         const subscription = accountService.user.subscribe(x => setUser(x));
-        Parser()
         return subscription.unsubscribe;
     }, []);
 
@@ -32,6 +30,7 @@ function App() {
                 <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
                 <PrivateRoute exact path="/" component={Home} />
                 <PrivateRoute path="/results" component={Results} />
+                <PrivateRoute path="/player" component={Player} />
                 <PrivateRoute path="/profile" component={Profile} />
                 <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
                 <Route path="/account" component={Account} />
