@@ -10,14 +10,19 @@ import { Profile } from '@/profile';
 import { Admin } from '@/admin';
 import { Account } from '@/account';
 
+import { Parser } from 'podcast-rss-feed-parser'
+
 function App() {
     const { pathname } = useLocation();
     const [user, setUser] = useState({});
 
     useEffect(() => {
         const subscription = accountService.user.subscribe(x => setUser(x));
+        Parser()
         return subscription.unsubscribe;
     }, []);
+
+
 
     return (
         <div className={'app-container' + (user && ' bg-light')}>
