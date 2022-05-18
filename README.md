@@ -1,5 +1,5 @@
-# react-signup-verification-boilerplate
+# Podcast Player Frontend
+
+Find and parse podcast feeds.
 
 React - Email Sign Up with Verification, Authentication & Forgot Password
-
-For documentation and a live demo see https://jasonwatmore.com/post/2020/04/22/react-email-sign-up-with-verification-authentication-forgot-password
